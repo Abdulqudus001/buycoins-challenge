@@ -11,7 +11,7 @@
 </head>
 <body>
   <nav class="nav">
-    <button class="nav__menu d-block d-md-none">
+    <button class="nav__menu d-block d-md-none" onclick="toggleNav()">
       <i class="fa fa-bars fa-2x"></i>
     </button>
     <a href="/" class="nav__logo">
@@ -22,7 +22,12 @@
         <input type="text" name="search" placeholder="Search or jump to">
       </li>
       <li class="nav__item">
-        <a href="#1">Pull requests</a>
+        <a href="#1">
+          Pulls
+          <span class="d-md-none d-lg-inline">
+            requests
+          </span>
+        </a>
       </li>
       <li class="nav__item">
         <a href="#2">Issues</a>
@@ -34,17 +39,17 @@
         <a href="#4">Explore</a>
       </li>
     </ul>
-    <div class="nav__actions d-none d-md-flex">
+    <div class="nav__actions d-flex">
       <div class="badge">
         <i class="fa fa-bell-o"></i>
       </div>
 
-      <div class="dropdown d-flex">
+      <div class="dropdown d-none d-md-flex">
         <img src="/images/plus.svg" alt="" width="14px" height="14px">
         <i class="fa fa-caret-down fa-0.5x"></i>
       </div>
 
-      <div class="dropdown d-flex">
+      <div class="dropdown d-none d-md-flex">
         <img src="/images/github.svg" alt="" width="20px" height="20px">
         <i class="fa fa-caret-down"></i>
       </div>

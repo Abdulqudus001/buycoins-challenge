@@ -22,6 +22,7 @@ body {
   padding: 0 30px;
   display: flex;
   align-items: center;
+  width: 100vw;
 }
 
 .nav__menu {
@@ -104,6 +105,66 @@ body {
 
 .dropdown img {
   margin: 0 5px 0 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav.open {
+    padding: 10px 30px;
+  }
+  
+  .nav.open .nav__items {
+    position: absolute;
+    width: 100%;
+    top: 39px;
+    padding: 20px;
+    left: 0;
+    background-color: var(--color-dark);
+    display: block;
+  }
+
+  .nav.open .nav__item:nth-of-type(1) {
+    margin-bottom: 16px;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .nav.open .nav__item:not(:nth-of-type(1)) {
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    padding: 8px 0;
+  }
+
+  .nav {
+    padding: 10px 30px;
+    justify-content: space-between;
+  }
+
+  .nav__items {
+    display: none;
+  }
+
+  .nav__actions {
+    margin-left: unset;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .nav.open .nav__items {
+    position: relative;
+    padding: 0;
+    top: unset;
+    width: unset;
+    display: flex;
+  }
+
+  .nav__items {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .nav__item {
+    font-size: .9rem;
+  }
 }
 
 /* End of Navbar Styles */
