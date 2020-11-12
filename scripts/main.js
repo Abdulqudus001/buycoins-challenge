@@ -7,7 +7,6 @@ const toggleNav = () => {
 
 
 const createRepository = (repository) => {
-  console.log(repository);
   const link = document.createElement('a');
   link.setAttribute('href', `https://github.com${repository.resourcePath}`);
   link.textContent = repository.name;
@@ -91,7 +90,6 @@ const createRepository = (repository) => {
 };
 
 const populateDOM = (data) => {
-  console.log(data);
   const profileImage = document.querySelector('.profile-img');
   profileImage.setAttribute('src', data.avatarUrl);
   profileImage.setAttribute('alt', `${data.name} profile image`);
@@ -108,6 +106,16 @@ const populateDOM = (data) => {
   const userName = document.querySelector('.user__name');
   avatarName.textContent = data.login;
   userName.textContent = data.name;
+
+  const userImg = document.querySelector('.user-img')
+  const status = document.querySelector('.status');
+  if (data.status) {
+    status.innerHTML = data.status.emojiHTML;
+  } else {
+    status.innerHTML = '<i class="fa fa-smile-o"></i>';
+  }
+
+  userImg.appendChild(status);
 
   const userAccount = document.querySelector('.user__account');
   userAccount.textContent = data.login;
@@ -132,19 +140,28 @@ const populateDOM = (data) => {
 };
 
 loader.style.display = 'flex';
+
+const username = prompt('Enter github username');
+
 const githubData = {
   token: 'ef7f55a69a526c830119bf634ccc823338f03ab3',
-  username: 'ireade',
+  username,
 };
 
 const body = {
   query: `
   query { 
-    user(login: "${githubData.username}") { 
+    user(login: "${githubData.username}") {
+      databaseId
+      id 
       bio
       avatarUrl
       name
       login
+      status {
+        emoji
+        emojiHTML
+      }
       repositories(first: 20 orderBy: { field: UPDATED_AT, direction: DESC }) {
         totalCount
         edges {
@@ -180,11 +197,16 @@ const fetchData = {
 fetch('https://api.github.com/graphql', fetchData)
   .then((res) => res.json())
   .then(({ data: { user } }) => {
-    populateDOM(user);
+    if (user) {
+      populateDOM(user);
+    } else {
+      throw('User does not exist');
+    }
   })
   .catch((err) => {
     console.log(err);
-    loader.style.display = 'none';
+    const loaderImg = document.querySelector('.loader__img');
+    loaderImg.style.display = 'none';
   });
 
 const handleScroll = () => {

@@ -25,7 +25,7 @@ body {
   left: 0;
   background-color: #FFF;
   z-index: 999;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -98,6 +98,10 @@ body {
   padding: 8px 12px;
   min-width: 280px;
   color: var(--color-white);
+}
+
+.search input::placeholder {
+  color: rgba(255, 255, 255, .7)
 }
 
 .search::after {
@@ -292,6 +296,29 @@ body {
   border-radius: 50%;
 }
 
+.user-img {
+  position: relative;
+}
+
+.status {
+  background-color: var(--color-white);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, .2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 75%;
+  left: 75%;
+}
+
+.status i {
+  color: rgba(0, 0, 0, .5);
+  font-size: 1.2rem;
+}
+
 .user__name {
   font-weight: 600;
   font-size: 1.8rem;
@@ -312,10 +339,6 @@ body {
   max-width: 200px;
   font-weight: 500;
   color: rgba(0, 0, 0, .7);
-}
-
-.repo {
-
 }
 
 .repo__search {
@@ -341,6 +364,10 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+  .status {
+    display: none;
+  }
+
   .user {
     margin-top: 0;
   }
@@ -385,6 +412,13 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+  .status {
+    width: 30px;
+    height: 30px;
+    font-size: .9rem;
+    left: 50%;
+  }
+
   .user__profile {
     display: block;
     margin-top: -50px;
@@ -397,6 +431,10 @@ body {
 }
 
 @media only screen and (min-width: 850px) and (max-width: 1200px) {
+  .status {
+    left: 70%;
+  }
+
   .user__profile img {
     width: 200px;
     height: 200px;
@@ -404,6 +442,13 @@ body {
 }
 
 @media only screen and (min-width: 1200px) {
+  .status {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    left: 75%;
+  }
+
   .user__profile img {
     width: 280px;
     height: 280px;
