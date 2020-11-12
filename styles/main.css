@@ -1,0 +1,109 @@
+:root {
+  --color-dark: #24292E;
+  --color-white: #FFF;
+  --color-link: #0366d6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  color: var(--color-dark);
+}
+
+/* Navbar Styles */
+
+.nav {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+}
+
+.nav__menu {
+  background: none;
+  border: none;
+  color: var(--color-white);
+}
+
+.nav__logo img {
+  width: 35px;
+}
+
+.nav__items {
+  align-items: center;
+}
+
+.nav__item a {
+  color: var(--color-white);
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav__item:hover {
+  opacity: .7;
+}
+
+.search {
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, .5);
+  position: relative;
+  margin: 0 20px;
+}
+
+.search input {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  min-width: 280px;
+  color: var(--color-white);
+}
+
+.search::after {
+  content: '/';
+  border-radius: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, .5);
+  font-size: .8rem;
+  padding: 0px 8px 3px;
+  right: 6px;
+}
+
+.nav__actions {
+  margin-left: auto;
+  align-items: center;
+}
+
+.badge {
+  position: relative;
+}
+
+.badge::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(#54a3ff,#006eed);
+  right: -5px;
+  top: -5px;
+}
+
+.dropdown {
+  align-items: center;
+  font-size: .8rem;
+}
+
+.dropdown img {
+  margin: 0 5px 0 20px;
+}
+
+/* End of Navbar Styles */
