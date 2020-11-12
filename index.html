@@ -59,21 +59,55 @@
   <main class="main">
     <div class="main__header d-none d-md-block">
       <div class="container">
-        <div class="tabs col col-md-9">
-          <img src="./images/overview.svg" alt="">
-        </div>
+        <nav class="tabs col col-md-9">
+          <div class="tab__item">
+            <img src="./images/overview.svg" alt="">
+            Overview
+          </div>
+          <div class="tab__item tab__item--active">
+            <img src="./images/repo.svg" alt="">
+            Repositories
+          </div>
+          <div class="tab__item">
+            <img src="./images/project.svg" alt="">
+            Projects
+          </div>
+          <div class="tab__item">
+            <img src="./images/packages.svg" alt="">
+            Packages
+          </div>
+        </nav>
       </div>
     </div>
     <div class="container">
       <div class="row content">
         <div class="col col-12 col-md-3">
-          <div style="background-color: red;">
-            Side 1
+          <div class="user">
+            <div class="user__profile">
+              <img src="https://avatars1.githubusercontent.com/u/36643967?s=460&u=fc6823727546425d31e9432791f119f6ed2b5670&v=4" alt="">
+            </div>
+            <h2 class="user__name">
+              Ire Aderinokun
+            </h2>
+            <p class="user__account">
+              ireade
+            </p>
+            <p class="user__bio">
+              Frontend developer and user interface designer
+            </p>
           </div>
         </div>
         <div class="col col-12 col-md-9">
-          <div style="background-color: blue;">
-            Side2
+          <div class="repo">
+            <input class="repo__search" type="text" placeholder="Find a repository">
+            <div class="repo__overview">
+              <span id="repo-count">
+                124
+              </span>
+              results for
+              <span>public</span>
+              repositories
+            </div>
           </div>
         </div>
       </div>

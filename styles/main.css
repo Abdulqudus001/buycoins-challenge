@@ -174,7 +174,7 @@ body {
 /* Main container styles */
 
 .main {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .main__header {
@@ -183,6 +183,90 @@ body {
 
 .main__header .tabs {
   margin-left: auto;
+  display: flex;
+}
+
+.tab__item {
+  display: flex;
+  padding: 10px 15px;
+  color: rgba(0, 0, 0, .8);
+  font-size: .9rem;
+}
+
+.tab__item img {
+  margin-right: 10px;
+}
+
+.tab__item--active {
+  font-weight: 600;
+  color: var(--color-dark);
+  border-bottom: 2px solid #f9826c;
+}
+
+.content {
+  margin-top: 20px;
+}
+
+.user {
+  margin-top: -50px;
+}
+
+.user__profile {
+  position: relative;
+}
+
+.user__profile img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+}
+
+.user__name {
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  margin: 10px 0 0;
+}
+
+.user__account {
+  color: rgba(0, 0, 0, .8);
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin: 0 0 10px;
+}
+
+.user__bio {
+  font-size: .9rem;
+  text-transform: capitalize;
+  max-width: 200px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, .7);
+}
+
+.repo {
+
+}
+
+.repo__search {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 6px;
+  width: 100%;
+  min-height: 40px;
+  padding: 0 15px;
+  outline-color: rgba(3, 102, 214, .3);
+}
+
+.repo__overview {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: rgba(0, 0, 0, .1);
+  padding: 10px 0;
+  display: block;
+  margin-top: 15px;
+}
+
+.repo__overview span {
+  font-weight: 500;
 }
 
 /* End of Main container styles */
