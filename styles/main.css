@@ -270,3 +270,32 @@ body {
 }
 
 /* End of Main container styles */
+
+
+/* Repositories styles */
+
+.repositories {
+  
+}
+
+.repository:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.repository {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.repository__btn {
+  border: 1px solid rgba(0, 0, 0, .1);
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.repository__btn i {
+  margin-right: 10px;
+}
+
+/* End of Repositories styles */
