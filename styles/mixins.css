@@ -16,7 +16,8 @@
 .row {
   display: flex;
   margin-right: -12px;
-  margin-right: -12px;
+  margin-left: -12px;
+  flex-flow: row wrap;
 }
 
 .col {

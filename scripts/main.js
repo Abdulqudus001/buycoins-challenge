@@ -59,3 +59,23 @@ fetch('https://api.github.com/graphql', fetchData)
 }).catch((err) => {
   console.log(err);
 })
+
+const handleScroll = () => {
+  const image = document.querySelector('.user__profile img');
+  const avatar = document.querySelector('.avatar');
+  const mainHeader = document.querySelector('.main__header');
+  const { bottom } = image.getBoundingClientRect();
+  if (bottom < 5) {
+    avatar.classList.add('show');
+    mainHeader.style.zIndex = '2';
+  } else {
+    avatar.classList.remove('show');
+    mainHeader.style.zIndex = '0';
+  }
+}
+
+let debounce;
+window.addEventListener('scroll', () => {
+  clearTimeout(debounce);
+  debounce = setTimeout(handleScroll, 10);
+});
