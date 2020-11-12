@@ -156,6 +156,7 @@ body {
     top: 39px;
     padding: 20px;
     left: 0;
+    z-index: 5;
     background-color: var(--color-dark);
     display: block;
   }
@@ -420,6 +421,7 @@ body {
 .repository {
   border-bottom: 1px solid rgba(0, 0, 0, .1);
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: flex-start;
   padding-bottom: 20px;

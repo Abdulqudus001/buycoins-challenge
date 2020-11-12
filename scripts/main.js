@@ -145,7 +145,7 @@ const body = {
       avatarUrl
       name
       login
-      repositories(last: 20) {
+      repositories(first: 20 orderBy: { field: UPDATED_AT, direction: DESC }) {
         totalCount
         edges {
           node {
