@@ -146,7 +146,6 @@ loader.style.display = 'flex';
 const username = prompt('Enter github username');
 
 const githubData = {
-  token: 'ef7f55a69a526c830119bf634ccc823338f03ab3',
   username,
 };
 
