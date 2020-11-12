@@ -1,9 +1,6 @@
 # BuyCoins Africa Challenge
 This contains the solution to the buycoins africa challenge to clone the github repository page showing the first 20 repositories for a user
 
-## Deployed URL
-Link to the deployed version of the solution can be found [here](https://blissful-gates-c2d356.netlify.app/)
-
 ## Contributing
 To run the project locally:
  - create a fork of the repo and clone to your local computer
