@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
-  <nav class="nav">
+  <header class="nav">
     <button class="nav__menu d-block d-md-none" onclick="toggleNav()">
       <i class="fa fa-bars fa-2x"></i>
     </button>
@@ -54,7 +54,31 @@
         <i class="fa fa-caret-down"></i>
       </div>
     </div>
-  </nav>
+  </header>
+
+  <main class="main">
+    <div class="main__header d-none d-md-block">
+      <div class="container">
+        <div class="tabs col col-md-9">
+          <img src="./images/overview.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row content">
+        <div class="col col-12 col-md-3">
+          <div style="background-color: red;">
+            Side 1
+          </div>
+        </div>
+        <div class="col col-12 col-md-9">
+          <div style="background-color: blue;">
+            Side2
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
   <script src="./scripts/main.js"></script>
 </body>
 </html>

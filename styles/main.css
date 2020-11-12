@@ -168,3 +168,21 @@ body {
 }
 
 /* End of Navbar Styles */
+
+
+
+/* Main container styles */
+
+.main {
+  margin-top: 50px;
+}
+
+.main__header {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.main__header .tabs {
+  margin-left: auto;
+}
+
+/* End of Main container styles */

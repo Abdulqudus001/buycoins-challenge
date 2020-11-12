@@ -13,6 +13,22 @@
   display: flex;
 }
 
+.row {
+  display: flex;
+  margin-right: -12px;
+  margin-right: -12px;
+}
+
+.col {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+
 .d-block {
   display: block;
 }
@@ -28,6 +44,14 @@
 
   .d-md-none {
     display: none;
+  }
+
+  .col-md-3 {
+    width: 25%;
+  }
+
+  .col-md-9 {
+    width: 75%;
   }
 }
 
