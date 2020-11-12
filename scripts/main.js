@@ -9,6 +9,8 @@ const toggleNav = () => {
 const createRepository = (repository) => {
   const link = document.createElement('a');
   link.setAttribute('href', `https://github.com${repository.resourcePath}`);
+  link.setAttribute('target', '_blank');
+  link.setAttribute('rel', 'noopener noreferrer');
   link.textContent = repository.name;
 
   const description = document.createElement('p');
@@ -17,7 +19,7 @@ const createRepository = (repository) => {
 
   const updated = document.createElement('p');
   updated.classList.add('updated');
-  updated.textContent = `updated ${format(new Date(repository.updatedAt))}`;
+  updated.textContent = `updated ${format(new Date(repository.pushedAt))}`;
 
   // Repository Language
   const language = document.createElement('div');
@@ -162,13 +164,13 @@ const body = {
         emoji
         emojiHTML
       }
-      repositories(first: 20 orderBy: { field: UPDATED_AT, direction: DESC }) {
+      repositories(first: 20 orderBy: { field: PUSHED_AT, direction: DESC }) {
         totalCount
         edges {
           node {
             id
             name
-            updatedAt
+            pushedAt
             forkCount
             resourcePath
             description
