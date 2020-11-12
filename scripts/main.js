@@ -200,11 +200,17 @@ fetch('https://api.github.com/graphql', fetchData)
     if (user) {
       populateDOM(user);
     } else {
-      throw('User does not exist');
+      throw({ status: 101, message: 'User does not exist' });
     }
   })
   .catch((err) => {
-    console.log(err);
+    document.querySelector('.error').style.display = 'block';
+    const errorMessage = document.querySelector('.error__text');
+    if (err.status === 101) {
+      errorMessage.textContent = err.message;
+    } else {
+      errorMessage.textContent = 'Something went wrong, please try again';
+    }
     const loaderImg = document.querySelector('.loader__img');
     loaderImg.style.display = 'none';
   });

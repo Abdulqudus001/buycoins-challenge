@@ -46,6 +46,31 @@ body {
   animation: pulse 1s infinite ease-in;
 }
 
+.error {
+  display: none;
+  text-align: center;
+}
+
+.error__img {
+  width: 200px;
+  max-width: 100%;
+}
+
+.error__text {
+  font-size: 3rem;
+  color: #BBB;
+}
+
+@media only screen and (max-width: 600px) {
+  .error__img {
+    width: 120px;
+  }
+
+  .error__text {
+    font-size: 2rem;
+  }
+}
+
 /* End of Loader styles */
 
 /* Navbar Styles */
