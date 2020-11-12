@@ -7,7 +7,7 @@ Link to the deployed version of the solution can be found [here](https://blissfu
 ## Contributing
 To run the project locally:
  - create a fork of the repo and clone to your local computer
- - Open up your github [developer settings](github.com/settings/tokens)
+ - Open up your github [developer settings](https://github.com/settings/tokens)
  - Create a new token and copy the new token generated.
  - Head over to local version of the app, locate the `main.js` file in the `scripts` folder
  - There's a `githubData` object in the file, should be around line 140 - 150.
