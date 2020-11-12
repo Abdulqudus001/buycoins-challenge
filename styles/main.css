@@ -15,6 +15,39 @@ body {
   overflow-x: hidden;
 }
 
+/* Loader styles */
+
+.loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 50px rgba(0, 0, 0, 0);
+  }
+}
+
+.loader__img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: pulse 1s infinite ease-in;
+}
+
+/* End of Loader styles */
+
 /* Navbar Styles */
 
 .nav {

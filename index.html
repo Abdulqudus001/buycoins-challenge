@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
+  <div class="loader">
+    <img class="loader__img" src="/images/github-black.svg" alt="">
+  </div>
   <header class="nav">
     <button class="nav__menu d-block d-md-none" onclick="toggleNav()">
       <i class="fa fa-bars fa-2x"></i>
@@ -50,7 +53,7 @@
       </div>
 
       <div class="dropdown d-none d-md-flex">
-        <img src="/images/github.svg" alt="" width="20px" height="20px">
+        <img id="profile-img" src="/images/github.svg" alt="" width="20px" height="20px">
         <i class="fa fa-caret-down"></i>
       </div>
     </div>
