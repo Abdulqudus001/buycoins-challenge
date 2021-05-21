@@ -1,12 +1,10 @@
 const nav = document.querySelector('.nav');
-const loader = document.querySelector('.loader');
 
 const toggleNav = () => {
   nav.classList.toggle('open');
 };
 
 const renderTopics = ({ edges }) => {
-  console.log(edges);
   if (edges.length < 1) {
     return null;
   } else {
@@ -15,7 +13,6 @@ const renderTopics = ({ edges }) => {
 
     edges.forEach(({ node }) => {
       const { topic: { name }, url} = node;
-      console.log(url);
       const singleRepositoryTopic = document.createElement('a');
       singleRepositoryTopic.setAttribute('href', url);
       singleRepositoryTopic.setAttribute('target', '_blank');
@@ -172,13 +169,7 @@ const populateDOM = (data) => {
 
   const repositoriesContainer = document.querySelector('.repositories');
   repositoriesContainer.append(fragment);
-
-  loader.style.display = 'none';
 };
-
-loader.style.display = 'flex';
-
-const username = prompt('Enter github username');
 
 const githubData = {
   username,
@@ -257,8 +248,6 @@ fetch('https://api.github.com/graphql', fetchData)
     } else {
       errorMessage.textContent = 'Something went wrong, please try again';
     }
-    const loaderImg = document.querySelector('.loader__img');
-    loaderImg.style.display = 'none';
   });
 
 
