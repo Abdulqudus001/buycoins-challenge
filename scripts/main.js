@@ -171,86 +171,6 @@ const populateDOM = (data) => {
   repositoriesContainer.append(fragment);
 };
 
-const githubData = {
-  username,
-};
-
-const body = {
-  query: `
-  query { 
-    user(login: "${githubData.username}") {
-      databaseId
-      id 
-      bio
-      avatarUrl
-      name
-      login
-      status {
-        emoji
-        emojiHTML
-      }
-      repositories(privacy:PUBLIC first: 20 orderBy: { field: PUSHED_AT, direction: DESC }) {
-        totalCount
-        edges {
-          node {
-            id
-            name
-            pushedAt
-            forkCount
-            resourcePath
-            description
-            stargazerCount
-            repositoryTopics (first: 5){
-              edges {
-                node {
-                  url
-                  topic {
-                    name
-                  }
-                }
-              }
-            }
-            primaryLanguage {
-              name
-              color
-            }
-          }
-        }
-      }
-    }
-  }
-  `,
-};
-
-const fetchData = {
-  headers: {
-    'Content-Type': 'application/json',
-    Authorization: `bearer ${githubData.token}`,
-  },
-  body: JSON.stringify(body),
-  method: 'POST',
-};
-
-fetch('https://api.github.com/graphql', fetchData)
-  .then((res) => res.json())
-  .then(({ data: { user } }) => {
-    if (user) {
-      populateDOM(user);
-    } else {
-      throw({ status: 101, message: 'User does not exist' });
-    }
-  })
-  .catch((err) => {
-    document.querySelector('.error').style.display = 'block';
-    const errorMessage = document.querySelector('.error__text');
-    if (err.status === 101) {
-      errorMessage.textContent = err.message;
-    } else {
-      errorMessage.textContent = 'Something went wrong, please try again';
-    }
-  });
-
-
 const handleScroll = () => {
   const image = document.querySelector('.user__profile img');
   const avatar = document.querySelector('.avatar');
@@ -272,3 +192,10 @@ window.addEventListener('scroll', () => {
   clearTimeout(debounce);
   debounce = setTimeout(handleScroll, 10);
 });
+
+const githubUserData = sessionStorage.getItem('github-profile');
+if (!githubUserData) {
+  location.assign('/index.html')
+} else {
+  populateDOM(JSON.parse(githubUserData));
+}
