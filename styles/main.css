@@ -143,7 +143,7 @@ body {
   opacity: .7;
 }
 
-.nav__item--btn {
+.nav__item--btn a {
   background-color: #2ea44f;
   text-align: center;
   padding: 5px 10px;
